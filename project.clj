@@ -1,4 +1,4 @@
-(defproject spaced-repetition "0.0.0"
+(defproject spaced-repetition "0.1.0"
   :description "Implementations of spaced repetition algorithms."
   :url "http://github.com/goldfeld/spaced-repetition"
   :license {:name "Eclipse Public License"
