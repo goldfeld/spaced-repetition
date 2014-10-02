@@ -1,0 +1,32 @@
+* spaced-repetition
+
+Implementations of spaced repetition algorithms.
+
+** Usage
+   
+*** SM-5
+
+The =determine-next-interval= function is probaly the only thing you
+need to call externally. It expects at least one argument: the quality
+of the repetition (0-5) i.e. how well the user remembered. For
+subsequent repetitions, it expects a second argument here called
+=learn-seq=, which is a vector containing 1. the repetition number =n=
+(the smallest =n= for which passing a =learn-seq= makes sense is =2=,
+because the first repetition is =n = 1= and at that point there isn't
+a previous =learn-seq=), 2. the easing factor and 3. the optimal
+factors matrix--implemented as a Clojure map with integers (values of
+=n=) for keys.
+
+You actually mostly don't have to worry about =learn-seq=, because
+=determine-next-interval= returns a map with two keys: =:learn-seq=,
+which is the one you should feed back in the next repetition, so a
+spaced repetition app will want to serialize/save this =learn-seq=;
+and =;days-to-next=, which is how many days into the future you should
+schedule this next repetition.
+
+** License
+
+Copyright © 2014 Vic Goldfeld
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
