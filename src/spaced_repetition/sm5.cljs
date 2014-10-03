@@ -56,7 +56,7 @@
   decrease."
   [interval-used quality used-of old-of fraction]
   (let [mod5 (max 1.05 (/ (inc interval-used) interval-used))
-        mod2 (max 0.75 (/ (dec interval-used) internal-used))
+        mod2 (max 0.75 (/ (dec interval-used) interval-used))
         modifier (max 0.05 (if (> quality 4)
                              (inc (* (dec mod5) (- quality 4)))
                              (- 1 (* (/ (- 1 mod2) 2) (- 4 quality)))))
