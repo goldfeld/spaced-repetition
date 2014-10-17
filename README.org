@@ -18,11 +18,14 @@ factors matrix--implemented as a Clojure map with integers (values of
 =n=) for keys.
 
 You actually mostly don't have to worry about =learn-seq=, because
-=determine-next-interval= returns a map with two keys: =:learn-seq=,
-which is the one you should feed back in the next repetition, so a
-spaced repetition app will want to serialize/save this =learn-seq=;
-and =;days-to-next=, which is how many days into the future you should
-schedule this next repetition.
+=determine-next-interval= returns a map with two keys:
+
+1. =:learn-seq=, which is the one you should feed back in the next
+   repetition, so a spaced repetition app will want to serialize/save
+   this =learn-seq=
+
+2. =:days-to-next=, which is how many days into the future you should
+   schedule this next repetition.
 
 ** License
 
