@@ -73,7 +73,8 @@
      (assert (> n 0))
      (assert (and (>= quality 0) (<= quality 5)))
      (if (< quality 3)
-       [(inter-repetition-interval n ef) (dec n) ef nil]
+       {:days-to-next (inter-repetition-interval n ef)
+        :learn-seq [(dec n) ef nil]}
        (let [next-ef (modify-e-factor ef quality)
              new-of-matrix
              (assoc-in of-matrix [n next-ef]
